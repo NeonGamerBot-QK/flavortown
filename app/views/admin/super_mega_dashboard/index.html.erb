@@ -1,3 +1,4 @@
+<% content_for :title, "Super Mega Dashboard" %>
 <div class="super-mega-dashboard" data-controller="lazy-load">
   <%= render HeadingComponent.new(title: "Super Mega Dashboard", tone: :red, size: :full) %>
 
@@ -5,10 +6,13 @@
   <h3>(prob remove before merging in prod)</h3>
 
   <div class="super-mega-dashboard__dashboards">
+        <%= render "admin/super_mega_dashboard/sections/funnel" %>
+
     <div class="super-mega-dashboard__dashboard">
       <div class="super-mega-dashboard__header super-mega-dashboard__header--fraud">
         <h2>Fraud Overview</h2>
         <%= link_to "View Full Dashboard →", admin_fraud_dashboard_path, class: "super-mega-link" %>
+        <%= link_to "View Joe Dashboard →", "https://joe.fraud.hackclub.com/cases/dashboard?ysws=Flavortown", class: "super-mega-link" %>
       </div>
 
       <!-- SHOP ORDERS SECTION -->
